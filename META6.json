@@ -1,0 +1,25 @@
+{
+  "auth": "zef:tbrowder",
+  "authors": [
+    "Tom Browder"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Provides a program to add Github's ssh keys to a user's '$HOME/.ssh/known_hosts' file",
+  "license": "Artistic-2.0",
+  "name": "Github::PublicKeys",
+  "perl": "6.d",
+  "provides": {
+    "Github::PublicKeys": "lib/Github/PublicKeys.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
