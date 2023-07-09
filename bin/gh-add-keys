@@ -1,0 +1,4 @@
+#!/bin/env raku
+use Github::PublicKeys;
+my $g = Github::PublicKeys.new;
+$g.add-keys;
