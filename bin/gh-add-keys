@@ -1,4 +1,10 @@
 #!/bin/env raku
 use Github::PublicKeys;
 my $g = Github::PublicKeys.new;
-$g.add-keys;
+my $w = @*ARGS.elems ?? @*ARGS.head !! '';
+if $w {
+    $g.add-keys: $w
+}
+else {
+    $g.add-keys
+}
