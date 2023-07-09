@@ -34,6 +34,7 @@ method add-keys($go?) {
     # check for existing Github lines
     my $github = 'github.com';
     my $n = 0;
+    
     for $khfil.IO.lines -> $line {
         my @w = $line.words;
         ++$n if @w.head eq $github;
@@ -48,6 +49,13 @@ method add-keys($go?) {
         HERE
         exit;
     }
+
+    # all is okay, add the new lines to the end
+    my $fh = open $khfil, :a; # append
+    for $gh-keys.lines -> $key {
+        $fh.say: $key;
+    }
+    $fh.close;
 
     print qq:to/HERE/;
     Success, check your '$khf' file for the $n added keys:
