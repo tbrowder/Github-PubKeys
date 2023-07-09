@@ -1,6 +1,5 @@
 unit class Github::PublicKeys;
 
-L<https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints>
 
 # the Github public key lines go here
 my constant $gh-keys = q:to/HERE/;
