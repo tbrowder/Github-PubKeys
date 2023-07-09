@@ -4,6 +4,7 @@
     "Tom Browder"
   ],
   "build-depends": [
+    "Proc::Easier"
   ],
   "depends": [
   ],
