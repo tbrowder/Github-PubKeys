@@ -19,9 +19,7 @@ Success, check your '~/.ssh/known_hosts' file for the 3 added keys:
 DESCRIPTION
 ===========
 
-**Github::PublicKeys** Provides an installed Raku program, `gh-add-keys`, to add Github's latest public keys for individual users into their `$HOME/.ssh/known_hosts` file and will report success as shown above.
-
-It will not delete any existing keys, and it will report an error if any existing 'github.com' keys are found. In that event, the user can manually delete those lines and rerun `gh-add-keys`.
+**Github::PublicKeys** Provides an installed Raku program, `gh-add-keys`, to add any of Github's latest public keys for individual users that are missing into your `$HOME/.ssh/known_hosts` file. Finally, it will report actions taken.
 
 The key data and instructions are documented at [Github.com](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)
 
