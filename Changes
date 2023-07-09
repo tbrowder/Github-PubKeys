@@ -1,6 +1,8 @@
 Revision history for Github-PublicKeys
 
 {{$NEXT}}
+    - Now check and add only missing keys,
+      or report all is well.
 
 0.0.2  2023-07-09T16:35:06-05:00
     - Need Proc::Easier to use live-ok for testing
