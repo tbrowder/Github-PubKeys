@@ -10,13 +10,33 @@ method add-keys {
     }
     my $home-dir = %*ENV<HOME>;
     my $ssh-dir = "$home-dir/.ssh";
-    my $khfil = "$home-dir/$ssh-dir/$known-hosts-file";
+    my $khfil = "$home-dir/$ssh-dir/known_hosts";
     unless $khfil.IO.r {
         die "FATAL: No '$khfil' exists Environment variable '\$HOME' is not defined."
     }
     # check for existing Github lines
+    my $github = 'github.com';
+    my $n = 0;
     for $khfil.IO.lines -> $line {
+        my @w = $line.words;
+        ++$n if @w.head eq $github;
     }
+    if $n {
+        my $s = $n > 1 ?? 's' !! '';
+        print qq:to/HERE/;
+        Sorry, $n line$s found with '$github' keys in file:
+            $khfil
+        You can remove those lines and rerun '{$*PROGRAM.basename}'
+        to add the latest keys.
+        HERE
+        exit;
+    }
+
+    my $fref = '~/.ssh/known_hosts';
+    print qq:to/HERE/;
+    Success, check your '$fref' file for the $n added keys:
+    HERE
+    say "  $_" for $gh-keys.lines;
 }
 
 
