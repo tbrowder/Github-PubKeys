@@ -5,6 +5,8 @@ NAME
 
 **Github::PublicKeys** - Provides a program to add Github's ssh keys to a user's '$HOME/.ssh/known_hosts' file
 
+Note versions previous to v0.2.0 are not reliable. Use a newer version to ensure no erroneous keys were added.
+
 SYNOPSIS
 ========
 
